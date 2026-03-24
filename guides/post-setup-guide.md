@@ -277,15 +277,21 @@ Set `session.agentToAgent.maxPingPongTurns: 1` — otherwise agents will chat ba
 4. **Long conversations** — use `/reset` when switching topics.
 5. **Subagent spawns** — each spawn is a full agent turn.
 
-### Cost Estimates (Anthropic)
+### Recommended Budget
+- **Hetzner CX32** (8GB RAM): ~$8/month
+- **Anthropic (Claude):** ~$20/month
+- **OpenAI (Codex/GPT-5.4):** ~$20/month — also serves as fallback
+- **Total:** ~$48/month
+
+### What Burns Tokens Fastest
 - Opus: ~$15/million input tokens, $75/million output tokens
-- Sonnet: ~$3/million input, $15/million output
-- Typical day (moderate use): $0.50-2.00
+- GPT-5.4: included with ChatGPT Pro, or ~$12/million via API
+- Typical day (moderate use): $1-3
 - Heavy build session: $5-15
 
 ### Free/Cheap Alternatives
-- OpenRouter free models (Step 3.5 Flash, Gemma, etc.) for low-priority agents
-- Codex OAuth (free with ChatGPT Pro subscription) for fallback
+- OpenRouter free models (Step 3.5 Flash, etc.) for low-priority agents
+- Codex CLI (free with ChatGPT Pro subscription) for builds + fallback
 
 ---
 

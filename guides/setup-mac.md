@@ -4,10 +4,10 @@ Complete guide to set up an OpenClaw AI assistant on a Hetzner VPS from a Mac. ~
 
 **What you'll need:**
 - Mac with Terminal (built-in)
-- Credit/debit card for Hetzner (~$5/month)
-- Anthropic API key ($10-20/month for Claude)
+- Credit/debit card for Hetzner (~$8/month)
+- Anthropic API key (~$20/month) + OpenAI API key (~$20/month)
 
-**Total monthly cost:** ~$15-25/month
+**Total monthly cost:** ~$48/month
 
 ---
 
@@ -47,7 +47,7 @@ Your key is now on your clipboard. Don't close Terminal.
 
 **Configure:**
 - **Image:** Ubuntu 24.04 LTS
-- **Type:** Shared CPU → **CX22** (2 vCPU, 4GB RAM) → $4.50/month
+- **Type:** Shared CPU → **CX32 (4 vCPU, 8GB RAM, 80GB disk) → $8/month
 - **Location:** Closest to you (US: Ashburn or Hillsboro)
 - **SSH Key:** Click "Add SSH Key" → paste from clipboard → name it `My Mac`
 - **Server name:** `openclaw-server`
@@ -271,6 +271,43 @@ openclaw --version
 If all green, you're done. Your AI assistant is running 24/7.
 
 ---
+
+
+---
+
+## Step 13: Install Codex CLI (3 min)
+
+Codex gives you a second AI model (GPT-5.4) that's included with ChatGPT Pro. It also serves as your fallback when Claude hits rate limits.
+
+```bash
+# Install Codex CLI
+npm install -g @openai/codex
+
+# Login (opens a browser link — click it to authenticate)
+codex auth login
+
+# Configure for best results
+cat > ~/.codex/config.toml << 'EOF'
+model = "gpt-5.4"
+reasoning_effort = "high"
+reasoning_summary = "detailed"
+EOF
+
+# Test it works
+codex exec "echo hello world"
+```
+
+### Set Up as Fallback Model
+
+So your agent automatically switches to Codex when Claude is rate-limited:
+
+```bash
+# Edit openclaw.json to add fallback
+openclaw config set agents.defaults.model '{"primary":"anthropic/claude-opus-4-6","fallbacks":["openai-codex/gpt-5.4"]}'
+systemctl --user restart openclaw-gateway
+```
+
+Now if Claude hits its limit, your agent seamlessly continues on GPT-5.4.
 
 ## What's Next
 

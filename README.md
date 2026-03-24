@@ -67,10 +67,10 @@ Once your main agent is solid, you can add specialists:
 
 | Item | Cost |
 |------|------|
-| Hetzner VPS (CX21) | $4.50/month |
-| Anthropic API (Claude) | $10-20/month typical |
-| OpenAI API (optional fallback) | $0-10/month |
-| **Total** | **~$15-30/month** |
+| Hetzner VPS (CX32, 8GB RAM) | ~$8/month |
+| Anthropic API (Claude) | ~$20/month |
+| OpenAI API (Codex/GPT-5.4) | ~$20/month |
+| **Total** | **~$48/month** |
 
 ## 📖 Resources
 
