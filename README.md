@@ -15,7 +15,12 @@ Think of it like having a personal ChatGPT that:
 
 ## 📚 Guides
 
-- **[Hetzner VPS Setup Guide](guides/hetzner-vps-setup-guide.md)** — Complete beginner's guide from zero to running AI assistant (~30 min)
+### Setup (pick your OS)
+- **[Mac Setup Guide](guides/setup-mac.md)** — VPS + OpenClaw from a Mac (~30 min)
+- **[Windows Setup Guide](guides/setup-windows.md)** — VPS + OpenClaw from Windows (~30 min)
+
+### After Setup
+- **[Post-Setup Guide](guides/post-setup-guide.md)** — What we learned in 6 weeks: reasoning, memory management, automation, security, multi-agent, cost control, and every gotcha we hit
 
 ## 🧠 Agent Workspace Files
 
