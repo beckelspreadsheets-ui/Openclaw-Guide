@@ -339,7 +339,7 @@ Codex gives you a second AI model (GPT-5.4) that's included with ChatGPT Pro. It
 npm install -g @openai/codex
 
 # Login (opens a browser link — click it to authenticate)
-codex auth login
+codex login
 
 # Configure for best results
 cat > ~/.codex/config.toml << 'EOF'

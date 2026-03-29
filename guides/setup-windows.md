@@ -326,32 +326,6 @@ Now send a message to your bot on Telegram. It should respond! 🎉
 
 ---
 
-## Step 14: Verify Everything (2 min)
-
-```bash
-# Gateway running?
-systemctl --user status openclaw-gateway
-
-# Tailscale connected?
-tailscale status
-
-# Firewall active?
-sudo ufw status
-
-# Node version?
-node --version
-
-# OpenClaw version?
-openclaw --version
-```
-
-If all green, you're done. Your AI assistant is running 24/7.
-
----
-
-
----
-
 ## Step 13: Install Codex CLI (3 min)
 
 Codex gives you a second AI model (GPT-5.4) that's included with ChatGPT Pro. It also serves as your fallback when Claude hits rate limits.
@@ -361,7 +335,7 @@ Codex gives you a second AI model (GPT-5.4) that's included with ChatGPT Pro. It
 npm install -g @openai/codex
 
 # Login (opens a browser link — click it to authenticate)
-codex auth login
+codex login
 
 # Configure for best results
 cat > ~/.codex/config.toml << 'EOF'
@@ -385,6 +359,29 @@ systemctl --user restart openclaw-gateway
 ```
 
 Now if Claude hits its limit, your agent seamlessly continues on GPT-5.4.
+
+## Step 14: Verify Everything (2 min)
+
+```bash
+# Gateway running?
+systemctl --user status openclaw-gateway
+
+# Tailscale connected?
+tailscale status
+
+# Firewall active?
+sudo ufw status
+
+# Node version?
+node --version
+
+# OpenClaw version?
+openclaw --version
+```
+
+If all green, you're done. Your AI assistant is running 24/7.
+
+---
 
 ## What's Next
 
